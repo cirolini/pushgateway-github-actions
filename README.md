@@ -1,4 +1,4 @@
-# Hello world docker action
+# Pushgateway github action
 
 This action a small Github Actions to send metrics in pipelines to [Prometheus](https://github.com/prometheus/prometheus) through [Pushgateway](https://github.com/prometheus/pushgateway).
 
