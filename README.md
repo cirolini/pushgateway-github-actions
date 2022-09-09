@@ -27,7 +27,7 @@ This action a small Github Actions to send metrics in pipelines to [Prometheus](
 ## Example usage
 
 ```
-uses: cirolini/hello-world-docker-action@v1
+uses: cirolini/pushgateway-github-actions@v1
 with:
   pushgateway_url: 'https://31dd-189-6-240-216.sa.ngrok.io/'
   job: "JobB"
