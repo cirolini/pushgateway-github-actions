@@ -1,0 +1,33 @@
+# action.yml
+name: 'Pushgateway POST'
+description: 'Post a metric to Pushgateway'
+inputs:
+  pushgateway_url:  # id of input
+    description: 'URL of pushgateway'
+    required: true
+    default: 'http://localhost:9091/'
+  job:  # id of input
+    description: 'Job name'
+    required: true
+    default: 'JobA'
+  metric_name:
+    description: "The name of the metric you want to create/update"
+    required: true
+    default: "new_metric"
+  metric_description:
+    description: "The description of the metric you want to create/update"
+    required: true
+    default: "metric description"
+  metric_labels:
+    description: "The list of labels for your metric"
+    required: true
+    default: "{'version': '1.0'}"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.pushgateway_url }}
+    - ${{ inputs.job }}
+    - ${{ inputs.metric_name }}
+    - ${{ inputs.metric_description }}
+    - ${{ inputs.metric_labels }}

@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: POST on Pushgateway
+    steps:
+      - name: POST on Pushgateway
+        uses: cirolini/hello-world-docker-action@v1
+        with:
+          pushgateway_url: 'https://7e39-2804-14d-4cd6-82a8-88e1-e45c-be84-933a.sa.ngrok.io'
+          job: "JobB"
+          metric_name: "github_action_pushgateway"
+          metric_description: "Test on github actions push metrics to Prometheus Pushgateway"
+          metric_labels: "{'version': '1.0'}"
